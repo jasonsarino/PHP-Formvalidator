@@ -9,8 +9,8 @@ require_once 'FormValidator.class.php';
 $form = new FormValidator();
 
 // Fetch value from post type
-$_POST['firstname'] = "Juan";
-$_POST['surname'] = "Dela Cruz";
+$_POST['firstname'] = "Juan123";
+$_POST['surname'] = "Dela Cruz123";
 $_POST['age'] = "23";
 $_POST['comment'] = "This is test comment's";
                 

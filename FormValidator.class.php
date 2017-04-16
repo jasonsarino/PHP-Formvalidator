@@ -22,6 +22,26 @@ class FormValidator extends Sanitizer
     public $dataFields = array();
     
     /**
+     * Holds all the error message
+     * @var array $errorMessage
+     */
+    private $errorMessage = array(
+        'alpha'             =>  "The {field} field may only contain alphabetical characters.",   
+        'alphaS'            =>  "The {field} field may only contain alphabetical characters and space.",
+        'alphaNum'          =>  "The {field} field may only contain alpha-numeric characters.",
+        'alphaNumS'         =>  "The {field} field may only contain alpha-numeric characters and space.",
+        'alphaNumSymbol'    =>  "The {field} field may only contain alpha-numeric characters and symbols.",
+        'alphaNumSymbolS'   =>  "The {field} field may only contain alpha-numeric characters and symbols and space.",
+        'dateFormat'        =>  "The {field} field may only contain date format.",
+        'email'             =>  "The {field} field may only contain valid email address format.",
+        'ipAddress'         =>  "The {field} field may only contain a valid IP.",
+        'num'               =>  "The {field} field may only contain numeric.",
+        'numS'              =>  "The {field} field may only contain numeric and space.",
+        'float'             =>  "The {field} field may only contain float.",
+        'regxp'             =>  "The {field} field may only contain valid regxp format."
+    );           
+
+    /**
      * Check that fields do not have characters other than letters of alphabet
      * @param  string  $value    Value to be checked
      * @param  string  $message  Message to show on false conditions
@@ -485,7 +505,8 @@ class FormValidator extends Sanitizer
                 }
                 else    
                 {
-                    $error = $error != '' ? $error : 'Invalid '. strtolower($data['label']);
+                    // $error = $error != '' ? $error : 'Invalid '. $data['label'];
+                    $error = $error != '' ? $error : str_replace('{field}', $data['label'], $this->errorMessage[$rule]);
                     
                     // If regxp is used
                     if (isset($data['expression']) && trim($data['expression']) != '') {
