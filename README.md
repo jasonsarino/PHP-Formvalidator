@@ -113,7 +113,7 @@ $form->validateData();
 // Check if valid all rules
 if ($form->isValid()) {                 
 
-	// Get sanitized $_POST from validator
+    // Get sanitized $_POST from validator
     $firstname = $form->dataFields['firstname'];
     $surname = $form->dataFields['surname'];
     $age = $form->dataFields['age'];
@@ -124,7 +124,31 @@ if ($form->isValid()) {
 
 } else {
 	
-	// Display all errors.
+    // Display all errors.
     echo  $form->getErrorMessage();
 }
 ```
+
+## Rule Reference
+The following is a list of all the native rules that are available to use:
+
+| Rule  | Parameter | Description |Example |
+| ------------- | ------------- | ------------- | ------------- |
+| required  | No  | Returns FALSE if the form element is empty. | |
+| alpha  | No  | Returns FALSE if the form element contains anything other than alphabetical characters. | |
+| alphaS  | No  | Returns FALSE if the form element contains anything other than alpha characters or spaces. Should be used after trim to avoid spaces at the beginning or end. | |
+| alphaNum  | No  | Returns FALSE if the form element contains anything other than alpha-numeric characters. | |
+| alphaNumS  | No  | Returns FALSE if the form element contains anything other than alpha-numeric characters or spaces. Should be used after trim to avoid spaces at the beginning or end. | |
+| alphaNumSymbol  | No  | Returns FALSE if the form element contains anything other than alpha-numeric-symbol characters. Should be used after trim to avoid spaces at the beginning or end. | |
+| alphaNumSymbolS  | No  | Returns FALSE if the form element contains anything other than alpha-numeric-symbol characters or spaces. Should be used after trim to avoid spaces at the beginning or end. | |
+| dateFormat  | No  | Returns FALSE if the form element contains anything other than date format. | |
+| dateTimeFormat  | No  | Returns FALSE if the form element contains anything other than date and time format. | |
+| email  | No  | Returns FALSE if the form element does not contain a valid email address. | |
+| ipAddress  | No  | Returns FALSE if the supplied IP address is not valid. Accepts an optional parameter of ‘ipv4’ or ‘ipv6’ to specify an IP format. | |
+| maxLen  | Yes  | Returns FALSE if the form element is longer than the parameter value. | maxLen[12] |
+| num  | No  | Returns FALSE if the form element contains anything other than numeric characters. | |
+| numS  | No  | Returns FALSE if the form element contains anything other than numeric and space characters. | |
+| float  | No  | Returns FALSE if the form element contains anything other than a float number. | |
+| regxp  | Yes  | Returns FALSE if the form element not meet a particular regular expression. | regxp[/^[0-9a-zA-Z ]+$/] |
+
+
