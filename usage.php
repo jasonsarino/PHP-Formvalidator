@@ -49,10 +49,11 @@ if ($form->isValid()) {
     $comment = $form->dataFields['comment'];
 
     // Display $_POST data
-    echo "First Name: " . $firstname . "<br />Surname: " . $surname . "<br />Age: " . $age . "<br />Comment: " . $comment;
+    echo "First Name: " . $firstname . "<br />Surname: " . $surname . 
+    "<br />Age: " . $age . "<br />Comment: " . $comment;
 
 } else {
-	
+
 	// Display all errors.
     echo  $form->getErrorMessage();
 }
