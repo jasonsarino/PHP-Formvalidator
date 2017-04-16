@@ -1,4 +1,7 @@
 <?php
+// include sanitizer class
+require_once 'Sanitizer.php';
+
 // include formvalidator class
 require_once 'FormValidator.class.php';
 
@@ -6,39 +9,52 @@ require_once 'FormValidator.class.php';
 $form = new FormValidator();
 
 // Fetch value from post type
-$_POST['firstname'] = 'Juan';
-$_POST['surname'] = 'Dela Cruz';
-$_POST['age'] = '23';
-$_POST['comment'] = 'test comment';
+$_POST['firstname'] = "Juan";
+$_POST['surname'] = "Dela Cruz";
+$_POST['age'] = "23";
+$_POST['comment'] = "This is test comment's";
+                
+/*
+ * (Optional)
+ * Use to reset array to FormValidator class
+ * if you have multple form entries
+ */
+$form->data = array();  
 
-// Set and get all data from $_POST
-$form->setData($_POST);
+// Set and Hold data into array                                       
+$form->setData($_POST);   
 
-/**
-*  Set rules and message for every $_POST
-*  @param string $_POST Name of text input
-*  @param string Caption or label
-*  @param array reserved form validation method 
-*  @param string Error Messages
-*/
-$form->setRules('firstname', 'First Name', 'required|alphaS', 'Letters, space only');
-$form->setRules('surname', 'Surname', 'alphaS', 'Letters, space only');
-$form->setRules('age', 'Age', 'num', 'Numbers only');
-$form->setRules('comment', 'Comment', 'alphaS', 'Letters, space only');
+// set rules for First Name 
+$form->setRules('firstname','First Name','required|alphaS');
 
-// Validate $_POST
-$form->validateData();
+// set rules for Surname                          
+$form->setRules('surname','Surname','required|alphaS');   
 
-// Display error messages
-if ($form->isValid() > 0) {
-    echo $form->getErrorMessage();
-} else {
+// set rules for Age                  	
+$form->setRules('age','Age','required|num');        
+
+// set rules for Comment             	
+$form->setRules('comment'  , 'Comment',   'alphaNumSymbolS');                     	
+
+// Execute and validate data request rules
+$form->validateData();		
+
+// Check if valid all rules
+if ($form->isValid()) {                 
+
+	// Get sanitized $_POST from validator
     $firstname = $form->dataFields['firstname'];
     $surname = $form->dataFields['surname'];
     $age = $form->dataFields['age'];
     $comment = $form->dataFields['comment'];
 
+    // Display $_POST data
     echo "First Name: " . $firstname . "<br />Surname: " . $surname . "<br />Age: " . $age . "<br />Comment: " . $comment;
+
+} else {
+	
+	// Display all errors.
+    echo  $form->getErrorMessage();
 }
 
 
