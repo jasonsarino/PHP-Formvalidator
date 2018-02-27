@@ -1,8 +1,8 @@
 <?php
 /**
  * @package   Sanitizer Class
- * @author    Mark Arjohn San Antonio <mark@resinc.com.au>
- * @copyright 2015 Research Data and Media Group Inc.
+ * @author    Jayson P. Sarino <jasonsarino27@gmail.com>
+ * @copyright 2018 Jayson P. Sarino
  * @version   1.0.3
  */
 class Sanitizer
