@@ -1,8 +1,7 @@
 <?php
 /**
  * @package Form Class
- * @author  Website Development Team
- * @license Research Data and Media Group Inc
+ * @author  Jayson P. Sarino <jasonsarino27@gmail.com>
  */
 class FormValidator extends Sanitizer
 {
