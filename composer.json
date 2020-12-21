@@ -15,6 +15,7 @@
             "homepage" : "https://jaysonsarino.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
         "php" : ">=5.6"
     }
