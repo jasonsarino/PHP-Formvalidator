@@ -3,7 +3,7 @@
  * @package   Sanitizer Class
  * @author    Jayson P. Sarino <jasonsarino27@gmail.com>
  * @copyright 2018 Jayson P. Sarino
- * @version   1.0.3
+ * @version   1.0.0
  */
 class Sanitizer
 {

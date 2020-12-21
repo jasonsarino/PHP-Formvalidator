@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Form Class
+ * @package Form Validator Class
  * @author  Jayson P. Sarino <jasonsarino27@gmail.com>
  */
 class FormValidator extends Sanitizer
