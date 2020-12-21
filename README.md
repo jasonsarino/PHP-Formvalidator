@@ -2,6 +2,14 @@
 
 This library use to validate and sanitize form entry with sanitization to avoid sql injection and easy to set rules for specific fields.
 
+## Install
+
+```
+composer require jasonsarino/form-validator
+```
+
+#### Requires PHP 7.1 or newer.
+
 ## Usage 
 
 #### Include Sanitizer and FormValidator Class
