@@ -1,5 +1,5 @@
 {
-    "name" : "jasonsarino/PHP-Formvalidator",
+    "name" : "jasonsarino/php-formvalidator",
     "description" : "This library use to validate and sanitize form entry with sanitization to avoid sql injection and easy to set rules for specific fields.",
     "keywords": [
         "php sanitize",
@@ -14,7 +14,5 @@
             "homepage" : "https://jaysonsarino.com"
         }
     ],
-    "require": {
-        "php" : ">=7.1.0"
-    }
+    "minimum-stability": "stable"
 }
