@@ -1,4 +1,7 @@
 <?php
+
+namespace FormValidator; 
+
 /**
  * @package   Sanitizer Class
  * @author    Jayson P. Sarino <jasonsarino27@gmail.com>

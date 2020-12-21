@@ -1,4 +1,6 @@
 <?php
+namespace FormValidator; 
+
 // include sanitizer class
 require_once 'Sanitizer.php';
 

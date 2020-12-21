@@ -1,4 +1,7 @@
 <?php
+
+namespace FormValidator;
+
 /**
  * @package Form Validator Class
  * @author  Jayson P. Sarino <jasonsarino27@gmail.com>
