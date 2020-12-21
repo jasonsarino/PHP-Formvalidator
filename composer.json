@@ -14,5 +14,5 @@
             "homepage" : "https://jaysonsarino.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
