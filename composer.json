@@ -8,7 +8,7 @@
         "sql injections",
         "sql security"
     ],
-    "homepage": "https://github.com/jasonsarino/PHP-Formvalidator",
+    "homepage": "https://github.com/jasonsarino/php-formvalidator",
     "authors": [
         {
             "name" : "Jayson Sarino",
