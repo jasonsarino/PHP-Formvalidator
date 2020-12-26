@@ -1,7 +1,9 @@
 <?php
 
+// require autoload
 require './vendor/autoload.php';
 
+// Initialize Form Validator
 $form = new \FormValidator\FormValidator();
 
 // Fetch value from post type
@@ -10,10 +12,13 @@ $_POST['surname'] = "Doe";
 $_POST['age'] = 26;
 $_POST['comment'] = "This is a test comment's";
 
+// Holds data inputs
 $form->data = array();  
 
+// Set data inputs
 $form->setData($_POST);  
 
+// Set rules for each inputs
 $form->setRules('firstname','First Name','required|alphaS');
 $form->setRules('surname','Surname','required|alphaS');            	
 $form->setRules('age','Age','required|num');             	
